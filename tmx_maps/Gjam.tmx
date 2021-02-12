@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" tilecount="2496" columns="52">
+  <image source="../../../../Desktop/tiles.png" width="1664" height="1536"/>
+ </tileset>
+ <layer id="1" name="Platforms" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0UdqQzEARVFhry5lO7HTXLYTO81lO3GqyzL8MIFkoLn4cA5c+AMNvvRKAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6Jazfinn6SJd9lv/DaNsME6TNLVHc4tssEyrtLZHc9tssEv7dLDHyVWvlEEaput0k27TXbpPozROk0bnBh2udrfaO0x7f3s85HuW5ukxPaXn9JJe0yIt06rRuVmHq92t9g7rf3u85XuT3tNH+kxf6Tv9pG3apX2jc5sOV7tb7R0Ov3scAccX0fM=
+  </data>
+ </layer>
+ <layer id="2" name="Coins" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+</map>
