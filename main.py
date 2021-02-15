@@ -66,6 +66,9 @@ class PlayerCharacter(arcade.Sprite):
         self.climbing = False
         self.is_on_ladder = False
 
+        self.temporality = 0
+        self.txt_temporality = "Passé"
+
         # --- Load Textures ---
 
         # Images from Kenney.nl's Asset Pack 3
@@ -157,6 +160,8 @@ class MyGame(arcade.Window):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
         # Set the path to start with this program
+        self.temporality = 0
+        self.txt_temporality = "Passé"
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
 
@@ -228,7 +233,7 @@ class MyGame(arcade.Window):
         coins_layer_name = 'Coins'
 
         # Map name
-        map_name = f":resources:tmx_maps/map_with_ladders.tmx"
+        map_name = f"./tmx_maps/map.tmx"
 
         # Read in the tiled map
         my_map = arcade.tilemap.read_tmx(map_name)
@@ -289,6 +294,10 @@ class MyGame(arcade.Window):
         arcade.draw_text(score_text, 10 + self.view_left, 10 + self.view_bottom,
                          arcade.csscolor.BLACK, 18)
 
+        score_text_temp = f"Temporalité: {self.txt_temporality}"
+        arcade.draw_text(score_text_temp, 10 + self.view_left, 10 + self.view_bottom,
+                         arcade.csscolor.WHITE, 18)
+
         # Draw hit boxes.
         # for wall in self.wall_list:
         #     wall.draw_hit_box(arcade.color.BLACK, 3)
@@ -337,6 +346,19 @@ class MyGame(arcade.Window):
             self.left_pressed = True
         elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.right_pressed = True
+        elif key == arcade.key.SPACE:
+            if self.temporality == 0:
+                self.player_sprite.center_y += 4071
+                self.temporality = 1
+                self.txt_temporality = "Présent"
+            elif self.temporality == 1:
+                self.player_sprite.center_y += 4700
+                self.temporality = 2
+                self.txt_temporality = "Future"
+            elif self.temporality == 2:
+                self.player_sprite.center_y -= 8700
+                self.temporality = 0
+                self.txt_temporality = "Passé"
 
         self.process_keychange()
 
